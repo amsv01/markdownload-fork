@@ -2,6 +2,7 @@
   "scripts": {
     "npminstall": "npm install",
     "build": "web-ext build",
+    "build:chrome": "web-ext build --overwrite-dest && cd web-ext-artifacts && rm -rf chrome-extension && mkdir chrome-extension && unzip -q markdownload_-_markdown_web_clipper-3.4.0.zip -d chrome-extension && rm -f chrome-extension/package*.json chrome-extension/chrome-polyfill.min.js chrome-extension/background/background-sw.js chrome-extension/background/background-service-worker.js && zip -r markdownload-chrome-manifest-v3.zip chrome-extension/",
     "start:firefoxdeveloper": "web-ext run -f firefoxdeveloperedition -u https://en.wikipedia.org/wiki/Special:Random --bc",
     "start:chromedevwin": "web-ext run -t chromium --chromium-binary \"C:\\Program Files\\Google\\Chrome Dev\\Application\\chrome.exe\" -u https://en.wikipedia.org/wiki/Special:Random --bc",
     "start:waveboxwin": "web-ext run -t chromium --chromium-binary %localappdata%/WaveboxApp/Application/wavebox.exe",
